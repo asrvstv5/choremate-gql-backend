@@ -57,6 +57,7 @@ module.exports = gql`
   type Query {
     loggedInUser: User
     userFromId(id: String!): User
+    userFromEmail(email: String!): User
   }
 
   type Mutation {

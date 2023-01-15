@@ -12,4 +12,11 @@ const userFromId = async (_, { id }, { models, user }) => {
     return await models.User.findOne({ _id: id });
 }
 
-module.exports = { loggedInUser, userFromId }
+const userFromEmail = async (_, { email }, {models, user}) => {
+    if(!user) {
+        throw new Error("Unauthorized");
+    }
+    return await models.User.findOne({ email: email });
+}
+
+module.exports = { loggedInUser, userFromId, userFromEmail }
