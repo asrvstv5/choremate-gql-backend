@@ -10,6 +10,7 @@ const deletePod = require('./deletePod');
 const register = require('./register');
 const login = require('./login');
 const updateUser = require('./updateUser');
+const updateOtherUser = require('./updateOtherUser');
 
 module.exports = {
     createPodcast, 
@@ -23,5 +24,6 @@ module.exports = {
     deletePod,
     register, 
     login, 
-    updateUser
+    updateUser,
+    updateOtherUser
 }

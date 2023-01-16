@@ -60,6 +60,14 @@ const userSchema = new Schema({
             }
           }],
         trim: false
+    },
+    messages: {
+        type: {
+            receivedPodRequests: {
+                type: [ String ]
+            }
+        },
+        trim: false
     }
 });
 

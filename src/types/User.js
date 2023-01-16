@@ -30,6 +30,14 @@ module.exports = gql`
     podInfoList: [PodInfoInput]
   }
 
+  type Messages {
+    receivedPodRequests: [String]
+  }
+
+  input MessagesInput {
+    receivedPodRequests: [String]
+  }
+
   type User {
     id: ID!
     name: String!
@@ -41,6 +49,7 @@ module.exports = gql`
     podPts: Int
     weekPts: Int
     prevPods: [PodInfo]
+    messages: Messages
   }
 
   input UpdateUserInput {
@@ -52,6 +61,7 @@ module.exports = gql`
     podPts: Int
     weekPts: Int
     prevPods: PodInfoInputList
+    messages: MessagesInput
   }
 
   type Query {
@@ -64,5 +74,6 @@ module.exports = gql`
     register(name: String!, email: String!, password: String!): User!
     login(email: String!, password: String!): String!
     updateUser(input: UpdateUserInput!): User!
+    updateOtherUser(id: String!, input: UpdateUserInput!): User!
   }
 `;
