@@ -31,10 +31,10 @@ module.exports = gql`
   }
 
   type Messages {
-    receivedPodRequests: [podDetail]
+    receivedPodRequests: [PodDetail]
   }
 
-  type podDetail {
+  type PodDetail {
     podId: String
     podName: String
   }
