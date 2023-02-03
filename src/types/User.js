@@ -31,11 +31,21 @@ module.exports = gql`
   }
 
   type Messages {
-    receivedPodRequests: [String]
+    receivedPodRequests: [podDetail]
+  }
+
+  type podDetail {
+    podId: String
+    podName: String
+  }
+
+  input podDetailInput {
+    podId: String
+    podName: String
   }
 
   input MessagesInput {
-    receivedPodRequests: [String]
+    receivedPodRequests: [podDetailInput]
   }
 
   type User {

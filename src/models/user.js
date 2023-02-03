@@ -64,7 +64,16 @@ const userSchema = new Schema({
     messages: {
         type: {
             receivedPodRequests: {
-                type: [ String ]
+                type: [ 
+                    {
+                        podId: {
+                            type: String
+                        },
+                        podName: {
+                            type: String
+                        }
+                    }
+                 ]
             }
         },
         trim: false
