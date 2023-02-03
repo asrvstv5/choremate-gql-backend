@@ -39,13 +39,13 @@ module.exports = gql`
     podName: String
   }
 
-  input podDetailInput {
+  input PodDetailInput {
     podId: String
     podName: String
   }
 
   input MessagesInput {
-    receivedPodRequests: [podDetailInput]
+    receivedPodRequests: [PodDetailInput]
   }
 
   type User {
