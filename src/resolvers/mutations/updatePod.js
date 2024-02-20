@@ -8,8 +8,8 @@ module.exports = async (_, {id, input}, {models}) => {
 
         const updatedPod = await podToUpdate.save();
         return updatedPod;
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.error(err);
         throw new Error('Error updating pod');
     }
 };
