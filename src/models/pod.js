@@ -21,6 +21,23 @@ const podSchema = new Schema({
             }
           }],
         trim: false
+    },
+    messages: {
+        type: {
+            receivedUserRequests: {
+                type: [ 
+                    {
+                        userId: {
+                            type: String
+                        },
+                        name: {
+                            type: String
+                        }
+                    }
+                 ]
+            }
+        },
+        trim: false
     }
 });
 

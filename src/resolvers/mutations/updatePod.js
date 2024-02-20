@@ -1,10 +1,15 @@
 module.exports = async (_, {id, input}, {models}) => {
-    const podToUpdate = await models.Pod.findOne({_id: id});
+    try{
+        const podToUpdate = await models.Pod.findOne({_id: id});
 
-    Object.keys(input).forEach(value => {
-        podToUpdate[value] = input[value];
-    });
+        Object.keys(input).forEach(value => {
+            podToUpdate[value] = input[value];
+        });
 
-    const updatedPod = await podToUpdate.save();
-    return updatedPod;
-}
+        const updatedPod = await podToUpdate.save();
+        return updatedPod;
+    } catch (error) {
+        console.error(error);
+        throw new Error('Error updating pod');
+    }
+};

@@ -11,12 +11,32 @@ module.exports = gql`
     input UpdatePodInput {
         name: String
         users: [String]
+        messages: PodMessagesInput
+    }
+
+    input PodMessagesInput {
+        receivedUserRequests: [UserRequestInput]
+    }
+
+    input UserRequestInput {
+        userId: String
+        name: String
+    }
+
+    type PodMessages {
+        receivedUserRequests: [UserRequest]
+    }
+
+    type UserRequest {
+        userId: String
+        name: String
     }
 
     type Pod {
         id: ID!
         name: String!
         users: [String!]
+        messages: PodMessages
     }
 
     type DeletePayload{
