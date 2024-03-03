@@ -5,7 +5,7 @@ module.exports = async (_, {id, input}, {models}) => {
         Object.keys(input).forEach(value => {
             podToUpdate[value] = input[value];
         });
-
+        console.log(input)
         const updatedPod = await podToUpdate.save();
         return updatedPod;
     } catch (err) {
