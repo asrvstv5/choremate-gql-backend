@@ -12,6 +12,7 @@ const server = new ApolloServer({
     resolvers,
     context: async ({ req }) => {
         var token = "";
+        console.log(req.body["operationName"])
         if(req.headers["authorization"]){
           token = await req.headers["authorization"].split(" ")[1];
           if (token == undefined) {
